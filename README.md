@@ -1,4 +1,14 @@
 Hello World!
+###### **Update Projektidee:**
+Anfang Mai hat sich meine Projektidee nach Absprache mit Herr Odoni noch einmal geändert.
+
+Neu wird aus einem Menüplaner ein Kalorienzähler/Bedarfsplaner.
+
+Idee ist es, dass die Applikation die Informationen eines "Kunden" entgegennehmen kann und ihm seinen Kalorienbedarf ausrechnet.
+Gleichzeitig sollen Nahrungsmittel mit deren Nährwerten erfasst werden können, einzelne Nahrungsmittel sollen in Mahlzeiten zusammengefasst werden.
+Die erfassten Daten sollen dann beispielsweise einen Essensvorschlag für Frühstück/Mittag/Abendessen machen können, sodass die Nahrungsmittel bzw. die Mahlzeit in den Kalorienbedarf passen.
+
+In einer ersten Idee soll die Dateneingabe wie gelernt über eine form in ein Json erfolgen. Über die Datenausgabe muss ich mir zu diesem Zeitpunkt noch Gedanken machen.
 
 ###### **Erste Projektidee:**
 
