@@ -1,0 +1,22 @@
+{% include "header.html" %}
+<body>
+    <h1>Hoi du, miar hoffen du hesch hunger!</h1></br>
+    <img src="{{ url_for('static', filename='images/logo_large.png') }}" alt="logo">
+    <form method="POST">
+    <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="login_name" placeholder="Bitte gib deine Email ein.">
+            <label for="floatingInput">Email Addresse</label>
+    </div>
+    </form>
+    <form method="POST">
+    <div class="form-floating">
+        <input type="password" class="form-control" name="login_password" id="floatingPassword" placeholder="Bitte gib dein Passwort ein.">
+        <label for="floatingPassword">Passwort</label>
+    </div>
+    </form>
+        </br>
+            <button type="submit">Logindaten übermitteln</button>
+
+    </br>
+    <a href="{{ url_for('home')}}">Als Gast fortfahren</a> <a href="{{ url_for('registration')}}">Kein Konto? Registrier dich!</a>
+{% include "footer.html" %}

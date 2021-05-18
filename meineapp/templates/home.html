@@ -1,0 +1,55 @@
+{% include "header.html" %}
+<body>
+{% include "menu.html" %}
+<div class="container">
+    <h1>Gimme your Data!!!!</h1>
+    <form method="POST">
+    <div class="form-floating mb-3">
+        <input type="text" name="vorname" class="form-control" id="floatingInput" placeholder="Max">
+        <label for="floatingInput">Vorname</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" name="nachname" class="form-control" id="floatingInput" placeholder="Mustermann">
+        <label for="floatingInput">Nachname</label>
+    </div>
+    <div class="form-floating mb-3">
+         <input type="text" name="geschlecht" class="form-control" id="floatingInput" placeholder="Gender">
+         <label for="floatingInput">Geschlecht</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" name="alter" class="form-control" id="floatingInput" placeholder="Alter">
+        <label for="floatingInput">Alter</label>
+    </div>
+    <div class="mb-3">
+        <label for ="formGroupInput3" class="form-label"></label>
+        <select class="form-select" name="aktivitaet" id="formGroupInput3" aria-label="Default select example">
+            <option selected>Aktivität auswählen</option>
+            <option value="1.2">Nur sitzende Aktivität</option>
+            <option value="1.5">Sitzende Tätigkeit, wenig Aktivität</option>
+            <option value="1.7">Moderate sportliche Akttivität</option>
+            <option value="1.9">Normale sportliche Aktivität</option>
+            <option value="2.2">Hohe Aktivität</option>
+        </select>
+    </div>
+
+    <div class="row g-2 mb-3">
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="number" name="groesse" class="form-control" id="floatingInput" placeholder="Grösse">
+                <label for="floatingInput">Grösse (in cm)</label>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="form-floating">
+                <input type="number" name="gewicht" class="form-control" id="floatingInput" placeholder="Gewicht">
+                <label for="floatingInput">Gewicht (in kg)</label>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block btn-lg">Daten übermitteln</button>
+
+    </form>
+
+</div>
+
+{% include "footer.html" %}
