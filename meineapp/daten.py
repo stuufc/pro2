@@ -7,9 +7,8 @@ def personendaten_speichern(key, vorname, nachname, geschlecht, alter, aktivitae
             datei_inhalt = json.loads(open_file.read())
     except FileNotFoundError:
         datei_inhalt = {}
-
-    datei_inhalt[str(key)] = {"Vorname": vorname,
-                         "Nachame": nachname,
+#hier wird Key als String (definiert in main.py) und die Dict-Struktur definiert
+    datei_inhalt[str(key)] = {
                          "Geschlecht": geschlecht,
                          "Alter": alter,
                          "Aktivität": aktivitaet,
@@ -36,3 +35,19 @@ def load():
             content = json.load(open_file)
     except FileNotFoundError:
         content = {}"""
+
+def rezepte_speichern(key2, kategorie, typ, kalorien):
+    try:
+        with open("data/rezepte.json") as open_file:
+            rezepte_inhalt = json.loads(open_file.read())
+    except FileNotFoundError:
+        rezepte_inhalt = {}
+#hier wird Key als String (definiert in main.py) und die Dict-Struktur definiert
+    rezepte_inhalt[str(key2)] = {
+                         "Kategorie": kategorie,
+                         "Typ": typ,
+                         "Kalorien": kalorien
+                         }
+
+    with open("data/rezepte.json", "w") as open_file:
+        json.dump(rezepte_inhalt, open_file, indent=4)

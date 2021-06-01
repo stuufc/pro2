@@ -1,0 +1,37 @@
+{
+    "Spaghetti Carbonara": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "820"
+    },
+    "Oreo Cheesecake": {
+        "Kategorie": "lunch",
+        "Typ": "vegi",
+        "Kalorien": "900"
+    },
+    "Ceasar Salad": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "450"
+    },
+    "Pizza Diavola": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "750"
+    },
+    "Bircherm\u00fcesli": {
+        "Kategorie": "breakfast",
+        "Typ": "vegi",
+        "Kalorien": "350"
+    },
+    "D\u00f6ner": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "600"
+    },
+    "Nutellabrot": {
+        "Kategorie": "dinner",
+        "Typ": "vegi",
+        "Kalorien": "220"
+    }
+}

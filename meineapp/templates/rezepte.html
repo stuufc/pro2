@@ -1,0 +1,44 @@
+{% include "header.html" %}
+{% include "menu.html" %}
+<div class="container">
+    <h1>Hier kannst du deine Rezepte erfassen</h1>
+    <form method="POST">
+    <div class="form-floating mb-3">
+        <input type="text" name="name" class="form-control" id="floatingInput" placeholder="Name">
+        <label for="floatingInput">Der Name deines Rezepts</label>
+    </div>
+    <div class="mb-3">
+        <label for ="formGroupInput3" class="form-label"></label>
+        <select class="form-select" name="kategorie" id="formGroupInput3" aria-label="Kategorie">
+            <option selected>Wähle die Kategorie deines Rezeptes</option>
+            <option value="breakfast">Frühstück</option>
+            <option value="lunch">Mittagessen</option>
+            <option value="dinner">Abendessen</option>
+            <option value="snack">Snack</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for ="formGroupInput3" class="form-label"></label>
+        <select class="form-select" name="typ" id="formGroupInput3" aria-label="Typ">
+            <option selected>Wähle den Typ deines Rezeptes</option>
+            <option value="vegi">Vegetarisch</option>
+            <option value="vegan">Vegan</option>
+            <option value="laktosefrei">Laktosefrei</option>
+            <option value="glutenfrei">Glutenfrei</option>
+            <option value="fleisch">Mit Fleisch</option>
+            <option value="fisch">Mit Fisch</option>
+        </select>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" name="kalorien" class="form-control" id="floatingInput" placeholder="Alter">
+        <label for="floatingInput">Kalorien pro Portion</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block btn-lg">Rezept übermitteln</button>
+    <p>{{ bestaetigung }}</p>
+
+    </div>
+
+    </form>
+</div>
+
+{% include "footer.html" %}

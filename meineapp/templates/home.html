@@ -1,5 +1,4 @@
 {% include "header.html" %}
-<body>
 {% include "menu.html" %}
 <div class="container">
     <h1>Gimme your Data!!!!</h1>
@@ -12,9 +11,14 @@
         <input type="text" name="nachname" class="form-control" id="floatingInput" placeholder="Mustermann">
         <label for="floatingInput">Nachname</label>
     </div>
-    <div class="form-floating mb-3">
-         <input type="text" name="geschlecht" class="form-control" id="floatingInput" placeholder="Gender">
-         <label for="floatingInput">Geschlecht</label>
+    <div class="mb-3">
+        <label for ="formGroupInput3" class="form-label"></label>
+        <select class="form-select" name="geschlecht" id="formGroupInput3" aria-label="Default select example">
+            <option selected>Geschlecht auswählen</option>
+            <option value="w">weiblich</option>
+            <option value="m">männlich</option>
+        </select>
+
     </div>
     <div class="form-floating mb-3">
         <input type="number" name="alter" class="form-control" id="floatingInput" placeholder="Alter">
