@@ -1,35 +1,8 @@
 {% include "header.html" %}
 {% include "menu.html" %}
-{% for nutzer, daten in person.items() %}
-    <h2>{{nutzer}}</h2>
-    {% for nutzerdaten, value2 in daten.items() %}
-        <h4>{{nutzerdaten}}: {{value2}}<h4>
-    {% endfor %}
+{% for person in nutzerdaten %}
+<h1>Hallo {{person}}!</h1></br>
+<h4>Hier erfährst du deinen Täglichen Kalorienbedarf um weder zu, noch abzunehmen.</h4></br>
+<h4>Dein täglicher Kalorienbedarf beträgt: {{kalorien}}</h4>
 {% endfor %}
-<!--<div class="container">
-    <h1>Deine Personendaten</h1>
-    <form method="POST">
-        <label for="nutzer_kalorien" class="mb-3">Nutzer auswählen: </label>
-        <select name="nutzer_kalorien" id="nutzer_kalorien">
-            <option></option>
-            {% for nutzer, daten in person.items() %}
-            <option>{{ nutzer }}</option>
-            {% for nutzerdaten, value2 in daten.items() %}
-            <p>{{nutzerdaten}}: {{value2}}</p>
-            {% endfor %}
-            {% endfor %}
-        </select>
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Daten übermitteln</button>
-
-    </form>
-    <form method="POST">
-        {% if nutzer in person.items() %}
-        {% for nutzerdaten, value2 in daten.items() %}
-        <p>{{nutzerdaten}}: {{value2}}</p>
-        {% endfor %}
-        {% endif %}
-    </form>
-</div>-->
-
-
 {% include "footer.html" %}

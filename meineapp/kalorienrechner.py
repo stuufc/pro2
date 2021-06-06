@@ -18,7 +18,7 @@ def kalorien_frau(gewicht, groesse, alter, aktivitaet):
     erhaltungskal_frau = grundumsatz_frau + aktivitaet
     return erhaltungskal_frau
 
-def kalorien(gewicht, groesse, alter, aktivitaet):
+def kalorien(gewicht, groesse, alter, aktivitaet, geschlecht):
     grundumsatz_mann = 66.47 + (13.7 * gewicht) + (5 * groesse) - (6.8 * alter)
     grundumsatz_frau = 655.1 + (9.6 * gewicht) + (1.8 * groesse) - (4.7 * alter)
     if geschlecht == "m":

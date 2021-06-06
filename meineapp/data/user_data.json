@@ -1,13 +1,13 @@
 {
     "Stefan Banzer": {
-        "Geschlecht": "m\u00e4nnlich",
+        "Geschlecht": "m",
         "Alter": "25",
         "Aktivit\u00e4t": "2.2",
         "Gr\u00f6sse": "185",
         "Gewicht": "85"
     },
     "Sebastian Banzer": {
-        "Geschlecht": "m\u00e4nnlich",
+        "Geschlecht": "m",
         "Alter": "23",
         "Aktivit\u00e4t": "1.2",
         "Gr\u00f6sse": "120",
@@ -61,5 +61,12 @@
         "Aktivit\u00e4t": "1.7",
         "Gr\u00f6sse": "176",
         "Gewicht": "78"
+    },
+    "Julian Vogelsang": {
+        "Geschlecht": "m",
+        "Alter": "28",
+        "Aktivit\u00e4t": "1.9",
+        "Gr\u00f6sse": "180",
+        "Gewicht": "74"
     }
 }
