@@ -14,14 +14,14 @@
         "Gewicht": "30"
     },
     "Sabrina Kindle": {
-        "Geschlecht": "weiblich",
+        "Geschlecht": "w",
         "Alter": "33",
         "Aktivit\u00e4t": "1.5",
         "Gr\u00f6sse": "168",
         "Gewicht": "55"
     },
     "Anita Banzer": {
-        "Geschlecht": "weiblich",
+        "Geschlecht": "w",
         "Alter": "25",
         "Aktivit\u00e4t": "2.2",
         "Gr\u00f6sse": "165",
@@ -68,5 +68,12 @@
         "Aktivit\u00e4t": "1.9",
         "Gr\u00f6sse": "180",
         "Gewicht": "74"
+    },
+    "Martin Villavicencio": {
+        "Geschlecht": "m",
+        "Alter": "27",
+        "Aktivit\u00e4t": "1.7",
+        "Gr\u00f6sse": "183",
+        "Gewicht": "80"
     }
 }

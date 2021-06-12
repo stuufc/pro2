@@ -33,5 +33,15 @@
         "Kategorie": "dinner",
         "Typ": "vegi",
         "Kalorien": "220"
+    },
+    "Lasagne al Forno": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "750"
+    },
+    "Mac and Cheese": {
+        "Kategorie": "dinner",
+        "Typ": "vegi",
+        "Kalorien": "2000"
     }
 }

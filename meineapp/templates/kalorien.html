@@ -1,8 +1,18 @@
 {% include "header.html" %}
 {% include "menu.html" %}
+<form action="/kalorien/" method="post">
+<select name="personen" id="cars">
 {% for person in nutzerdaten %}
-<h1>Hallo {{person}}!</h1></br>
-<h4>Hier erfährst du deinen Täglichen Kalorienbedarf um weder zu, noch abzunehmen.</h4></br>
-<h4>Dein täglicher Kalorienbedarf beträgt: {{kalorien}}</h4>
+<!-- Example single danger button -->
+      <option value="{{person}}">{{person}}</option>
 {% endfor %}
+</select>
+     <input type="submit" value="Submit">
+</form>
+{% if kalorien != 0 %}
+<p>{{kalorien}}</p>
+{% endif %}
+
+
+
 {% include "footer.html" %}

@@ -54,16 +54,18 @@ def datenspeichern():
 def datensatz():
     with open("data/user_data.json", "r") as open_file:
         user_data = json.load(open_file)
-    user = user_data.keys()
-    for nutzer, daten in user_data.items():
-        for attribute, value in daten.items():
-            gewicht = int(user_data[nutzer]["Gewicht"])
-            groesse = int(user_data[nutzer]["Grösse"])
-            alter = int(user_data[nutzer]["Alter"])
-            aktivitaet = float(user_data[nutzer]["Aktivität"])
-            geschlecht = user_data[nutzer]["Geschlecht"]
-        kcal = kalorienrechner.kalorien(gewicht, groesse, alter, aktivitaet, geschlecht)
-        return render_template("kalorien.html", nutzerdaten=user, person=nutzer, kalorien=kcal)
+        user = user_data.keys()
+        person = "Null"
+        kcal = 0
+        if request.method == "POST":
+            person = request.form["personen"]
+            gewicht = int(user_data[person]["Gewicht"])
+            groesse = int(user_data[person]["Grösse"])
+            alter = int(user_data[person]["Alter"])
+            aktivitaet = float(user_data[person]["Aktivität"])
+            geschlecht = user_data[person]["Geschlecht"]
+            kcal = kalorienrechner.kalorien(gewicht, groesse, alter, aktivitaet, geschlecht)
+        return render_template("kalorien.html", nutzerdaten=user, person=person, kalorien=kcal)
     #personendaten = personendaten_laden()
     return render_template("kalorien.html")
 
