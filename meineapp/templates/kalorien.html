@@ -1,16 +1,32 @@
 {% include "header.html" %}
 {% include "menu.html" %}
 <form action="/kalorien/" method="post">
-<select name="personen" id="cars">
+<select name="personen" id="users">
 {% for person in nutzerdaten %}
-<!-- Example single danger button -->
       <option value="{{person}}">{{person}}</option>
 {% endfor %}
 </select>
      <input type="submit" value="Submit">
 </form>
-{% if kalorien != 0 %}
-<p>{{kalorien}}</p>
+{% if kalorien != 0 %} <!-- sorgt dafür, dass Kalorien nur angezeigt werden, wenn die Funktion gecallt wird, denn 0 ist für Kalorien vordefiniert (in dem Fall soll es nicht angezeigt werden)-->
+<p>{{person}} muss {{kalorien}} Kalorien zu sich nehmen.</p>
+{% endif %}
+<!-- hier werden die passenden Gerichte, die im main.py in die menu liste geschrieben wurden
+ausgegeben. Ähnliche Logik wie vorne. Wenn die länge der Liste grösser als 0 ist wird
+durch die menu Liste geloopt und wenn das Gericht nicht None ist, also es ein passendes Gericht in der
+Liste hat, dann wird das Gericht inklusive Kategorie, Kalorien und Typ ausgegeben -->
+{% if menu|length > 0 %}
+    {% for gericht in menu %}
+        {% if gericht is not none %}
+            <div>{{gericht[0][0]}}</div>
+            <ul>
+                <li>Kategorie: {{gericht[0][1]["Kategorie"]}}</li>
+                <li>Kalorien: {{gericht[0][1]["Kalorien"]}} </li>
+                <li>Typ: {{gericht[0][1]["Typ"]}}</li>
+            </ul>
+
+        {% endif %}
+    {% endfor %}
 {% endif %}
 
 

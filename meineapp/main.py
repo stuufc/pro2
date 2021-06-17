@@ -57,6 +57,7 @@ def datensatz():
         user = user_data.keys()
         person = "Null"
         kcal = 0
+        menu = []
         if request.method == "POST":
             person = request.form["personen"]
             gewicht = int(user_data[person]["Gewicht"])
@@ -65,7 +66,8 @@ def datensatz():
             aktivitaet = float(user_data[person]["Aktivität"])
             geschlecht = user_data[person]["Geschlecht"]
             kcal = kalorienrechner.kalorien(gewicht, groesse, alter, aktivitaet, geschlecht)
-        return render_template("kalorien.html", nutzerdaten=user, person=person, kalorien=kcal)
+            menu = kalorienrechner.menu_from_calories(kcal)
+        return render_template("kalorien.html", nutzerdaten=user, person=person, kalorien=kcal, menu=menu)
     #personendaten = personendaten_laden()
     return render_template("kalorien.html")
 

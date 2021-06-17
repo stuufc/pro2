@@ -43,5 +43,25 @@
         "Kategorie": "dinner",
         "Typ": "vegi",
         "Kalorien": "2000"
+    },
+    "H\u00fcttenk\u00e4se": {
+        "Kategorie": "snack",
+        "Typ": "vegi",
+        "Kalorien": "250"
+    },
+    "Spiegelei": {
+        "Kategorie": "breakfast",
+        "Typ": "laktosefrei",
+        "Kalorien": "50"
+    },
+    "Fr\u00fcchte Smoothie": {
+        "Kategorie": "breakfast",
+        "Typ": "vegan",
+        "Kalorien": "120"
+    },
+    "Insalate Caprese": {
+        "Kategorie": "dinner",
+        "Typ": "vegi",
+        "Kalorien": "150"
     }
 }
