@@ -1,17 +1,28 @@
 {% include "header.html" %}
 {% include "menu.html" %}
+<div class="container">
+<br>
+<center><h1>Hi! Hier kannst Du deine Kalorien ausrechnen.</h1></center>
+<br>
+<h5>Falls du deine Daten noch nicht erfasst hast, kannst Du dies im Menüreiter "Nutzer erfassen" tun.</h5>
+<h5>Wenn deine Daten bereits erfasst sind, wähle hier deinen Namen aus und klick auf den Button "Bestätigen".</h5>
+<br>
+<!-- Im Dropdown wird durch die Keys/Personen aus user_data.json geloopt, damit die Personen im Dropdown
+angezeigt werden. Der ausgewählte Key wird mittels Formular (Button im Formular) übermittelt.-->
 <form action="/kalorien/" method="post">
 <select name="personen" id="users">
 {% for person in nutzerdaten %}
       <option value="{{person}}">{{person}}</option>
 {% endfor %}
 </select>
-     <input type="submit" value="Submit">
+     <input type="submit" class="btn btn-danger" value="Bestätigen">
 </form>
+    <br>
+<!-- Die errechneten Kalorien für die entsprechende Person werden von main.py hier abgefangen und angezeigt.-->
 {% if kalorien != 0 %} <!-- sorgt dafür, dass Kalorien nur angezeigt werden, wenn die Funktion gecallt wird, denn 0 ist für Kalorien vordefiniert (in dem Fall soll es nicht angezeigt werden)-->
-<p>{{person}} muss {{kalorien}} Kalorien zu sich nehmen.</p>
+    <p><font color="red">{{person}}</font> muss täglich <font color="red">{{kalorien}}</font> Kalorien zu sich nehmen.</p>
 {% endif %}
-<!-- hier werden die passenden Gerichte, die im main.py in die menu liste geschrieben wurden
+<!-- Hier werden die passenden Gerichte, die im main.py in die menu Liste geschrieben wurden
 ausgegeben. Ähnliche Logik wie vorne. Wenn die länge der Liste grösser als 0 ist wird
 durch die menu Liste geloopt und wenn das Gericht nicht None ist, also es ein passendes Gericht in der
 Liste hat, dann wird das Gericht inklusive Kategorie, Kalorien und Typ ausgegeben -->
@@ -28,7 +39,7 @@ Liste hat, dann wird das Gericht inklusive Kategorie, Kalorien und Typ ausgegebe
         {% endif %}
     {% endfor %}
 {% endif %}
-
+</div>
 
 
 {% include "footer.html" %}

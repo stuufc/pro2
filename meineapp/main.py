@@ -6,35 +6,20 @@ from flask import request
 import daten
 import json
 import kalorienrechner
-#import preise
+# import sämtlicher Funktionalitäten und Dateien, die im main.py benötigt werden
 
 app = Flask("meineapp")
 
-def personendaten_laden():
-    with open("data/user_data.json") as open_file:
-        personendaten = json.load(open_file)
-        return personendaten
+# Hier wird die Startseite gerendert, von wo aus auf die anderen Funktionalitäten der Webapp gelinkt wird.
+@app.route("/")
+def startseite():
+    return render_template("index.html")
 
-#@app.route("/hello")
-#def home():
-    #return render_template('index.html', name="Stefan")
-
-@app.route("/hello/")
-@app.route("/hello/<name>") #dynamischer URL wird erstellt, gibt Namen zurück.
-def begruessung(name="Wörld"):
-    return render_template("index.html", name=name)
-
-@app.route("/login/", methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        user_login = request.form['login_name']
-        #rueckgabe_string = "Hello " + user_login + "!"
-        return render_template("login.html", login=user_login)
-    else:
-        return render_template("login.html")
-
+# Unter diesem Route läuft die Speicherung der Nutzerdaten in das user_data.json
 @app.route("/home/", methods=['GET', 'POST'])
 def datenspeichern():
+    # Die Daten des Webformulars auf home.html werden abgefangen und über die Funktion
+    # personendaten_speichern als nested dictionary in user_data.json gespeichert wird.
     if request.method == 'POST':
         vorname = request.form['vorname']
         nachname = request.form['nachname']
@@ -46,10 +31,14 @@ def datenspeichern():
         gewicht = request.form['gewicht']
         daten.personendaten_speichern(key, vorname, nachname, geschlecht, alter, aktivitaet, groesse, gewicht)
         return flask.redirect("/kalorien/")
+    # Hier wird definiert, dass nach erfolgreicher Eingabe eines Nutzers auf kalorien.html redirected werden soll.
+    # Ohne Betätigung des Formulars wird die Seite home.html gerendert und dargestellt.
     else:
         return render_template("home.html")
 
-
+# Hier wird das user_data.json ausgelesen und in eine Variable gespeichert. Die Keys werden als
+# Nutzerdaten an kalorien.html weitergegeben, damit dort durch die Keys geloopt werden kann.
+# Einige Variablen werden als leere Werte vordefiniert, da diese ansonsten nur innerhalb der if-condition "existieren".
 @app.route("/kalorien/", methods=['GET', 'POST'])
 def datensatz():
     with open("data/user_data.json", "r") as open_file:
@@ -58,6 +47,9 @@ def datensatz():
         person = "Null"
         kcal = 0
         menu = []
+        # Innerhalb der if-condition wird der im kalorien.html ausgewählte Key als person abgefangen
+        # Die entsprechenden Attribute zugehörig zum Key werden dann in Variablen gespeichert und an
+        # die entsprechende Funktion weitergegeben. Das Ergebnis dieser Funktion ist in der Variable kcal gespeichert.
         if request.method == "POST":
             person = request.form["personen"]
             gewicht = int(user_data[person]["Gewicht"])
@@ -66,11 +58,16 @@ def datensatz():
             aktivitaet = float(user_data[person]["Aktivität"])
             geschlecht = user_data[person]["Geschlecht"]
             kcal = kalorienrechner.kalorien(gewicht, groesse, alter, aktivitaet, geschlecht)
+            # Die berechneten Kalorien aus der obigen Funktion werden an die Funktion menu_from_calories
+            # weiter gegeben. Gespeichert in der Variable menu wird die entsprechende Info mitgeschickt.
             menu = kalorienrechner.menu_from_calories(kcal)
         return render_template("kalorien.html", nutzerdaten=user, person=person, kalorien=kcal, menu=menu)
-    #personendaten = personendaten_laden()
     return render_template("kalorien.html")
 
+# Unter diesem Route werden Gerichte in das rezepte.json geschrieben.
+# Die Funktionalität ist praktisch gleich wie jene des oberen Routes zur Nutzerdatenerfassung.
+# Unterschied: Hier wird nicht redirected, dafür aber ein Bestätigungssatz angezeigt, dass das
+# Rezept erfolgreich gespeichert wurde.
 @app.route("/rezepte/", methods=['GET', 'POST'])
 def rezeptespeichern():
     if request.method == 'POST':
@@ -84,31 +81,6 @@ def rezeptespeichern():
         return render_template("rezepte.html", bestaetigung=bestaetigung) #der Satz "bestaetigung" wird hier an das HTML Template weitergegeben
     return render_template("rezepte.html")
 
-@app.route("/registration/")
-def registration():
-    return render_template("footer.html")
-
-@app.route("/tescht/", methods=['GET', 'POST'])
-def testsachen():
-    return render_template('kalorien.html')
-
-@app.route("/about")
-def about():
-    return render_template('header.html')
-
-
-#from preise import rabatt_berechnen => kann so z.B. Funktionen etc. aus anderen Dateien importieren
-"""@app.route("/rabatt/<preis>")
-def rabatt(preis):
-    preis_mit_rabatt = preis.rabatt(int(preis))
-
-    return "Der neue Preis ist: " + str(preis_mit_rabatt)"""
-
-"""@app.route("/gutschein/<preis>/<gutschein>")
-def gutschein(preis, gutschein):
-    preis_mit_rabatt = gutscheine.rabatt(preis, gutschein)
-
-    return "Der neue Preis mit Gutschein ist: " + str(preis_mit_rabatt)"""
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

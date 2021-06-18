@@ -82,5 +82,54 @@
         "Aktivit\u00e4t": "2.2",
         "Gr\u00f6sse": "165",
         "Gewicht": "55"
+    },
+    "Maria Berardi": {
+        "Geschlecht": "w",
+        "Alter": "48",
+        "Aktivit\u00e4t": "1.7",
+        "Gr\u00f6sse": "163",
+        "Gewicht": "70"
+    },
+    "Abraham Merryweather": {
+        "Geschlecht": "m",
+        "Alter": "36",
+        "Aktivit\u00e4t": "2.2",
+        "Gr\u00f6sse": "178",
+        "Gewicht": "80"
+    },
+    "Sergio Ramos": {
+        "Geschlecht": "m",
+        "Alter": "35",
+        "Aktivit\u00e4t": "2.2",
+        "Gr\u00f6sse": "182",
+        "Gewicht": "82"
+    },
+    "Patrick Beck": {
+        "Geschlecht": "m",
+        "Alter": "32",
+        "Aktivit\u00e4t": "2.2",
+        "Gr\u00f6sse": "175",
+        "Gewicht": "70"
+    },
+    "Regina Blaser": {
+        "Geschlecht": "w",
+        "Alter": "19",
+        "Aktivit\u00e4t": "1.5",
+        "Gr\u00f6sse": "170",
+        "Gewicht": "88"
+    },
+    "Anton Banzer": {
+        "Geschlecht": "m",
+        "Alter": "58",
+        "Aktivit\u00e4t": "2.2",
+        "Gr\u00f6sse": "182",
+        "Gewicht": "80"
+    },
+    "Bruno Labbadia": {
+        "Geschlecht": "m",
+        "Alter": "45",
+        "Aktivit\u00e4t": "1.7",
+        "Gr\u00f6sse": "189",
+        "Gewicht": "85"
     }
 }

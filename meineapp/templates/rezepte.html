@@ -1,7 +1,11 @@
 {% include "header.html" %}
 {% include "menu.html" %}
 <div class="container">
-    <h1>Hier kannst du deine Rezepte erfassen</h1>
+    <br>
+    <center><h1>Hier kannst du deine Mahlzeiten erfassen!</h1></center>
+    <br>
+    <!-- Anhand des folgenden Formulars werden die Daten an die Funktion geschickt, um Sie dann anhand
+    des gegebenen Inputs in die Datenbank zu speichern. Erneut Bootstrap Komponenten verwendet-->
     <form method="POST">
     <div class="form-floating mb-3">
         <input type="text" name="name" class="form-control" id="floatingInput" placeholder="Name">
@@ -33,7 +37,7 @@
         <input type="number" name="kalorien" class="form-control" id="floatingInput" placeholder="Alter">
         <label for="floatingInput">Kalorien pro Portion</label>
     </div>
-    <button type="submit" class="btn btn-primary btn-block btn-lg">Rezept übermitteln</button>
+    <button type="submit" class="btn btn-danger btn-block btn-lg">Mahlzeit speichern</button>
     <p>{{ bestaetigung }}</p>
 
     </div>

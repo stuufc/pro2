@@ -63,5 +63,40 @@
         "Kategorie": "dinner",
         "Typ": "vegi",
         "Kalorien": "150"
+    },
+    "Chicken Avocado Bowl": {
+        "Kategorie": "dinner",
+        "Typ": "fleisch",
+        "Kalorien": "700"
+    },
+    "Ghackets mit H\u00f6rnli": {
+        "Kategorie": "dinner",
+        "Typ": "fleisch",
+        "Kalorien": "900"
+    },
+    "Olma Bratwurst": {
+        "Kategorie": "lunch",
+        "Typ": "fleisch",
+        "Kalorien": "350"
+    },
+    "Protein Riegel": {
+        "Kategorie": "snack",
+        "Typ": "vegan",
+        "Kalorien": "80"
+    },
+    "Wassermelone": {
+        "Kategorie": "snack",
+        "Typ": "vegan",
+        "Kalorien": "40"
+    },
+    "Weizenbier": {
+        "Kategorie": "snack",
+        "Typ": "laktosefrei",
+        "Kalorien": "150"
+    },
+    "Maiskolben": {
+        "Kategorie": "snack",
+        "Typ": "vegi",
+        "Kalorien": "180"
     }
 }

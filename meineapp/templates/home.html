@@ -1,7 +1,11 @@
 {% include "header.html" %}
 {% include "menu.html" %}
 <div class="container">
-    <h1>Gimme your Data!!!!</h1>
+    <br>
+    <center><h1>Gimme your Data!!!!</h1></center>
+    <br>
+    <!-- Das folgende Formular schickt Daten an die Funktion, welche schlussendlich den Nutzer in
+    user_data.json speichert.-->
     <form method="POST">
     <div class="form-floating mb-3">
         <input type="text" name="vorname" class="form-control" id="floatingInput" placeholder="Max">
@@ -50,10 +54,10 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-block btn-lg">Daten übermitteln</button>
+    <button type="submit" class="btn btn-danger btn-block btn-lg">Daten übermitteln</button>
 
     </form>
 
 </div>
-
+<br>
 {% include "footer.html" %}

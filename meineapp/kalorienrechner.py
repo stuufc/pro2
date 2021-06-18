@@ -1,17 +1,12 @@
 import json
 import random
 
-with open ("data/user_data.json", "r") as open_file:
-    personendaten = json.load(open_file)
-    print(personendaten)
-
-for person in personendaten:
-    print(person)
-
 # Mit dieser Funktion werden die Kalorien anhand der übermittelten Attribute ausgerechnet
+# Die Quelle zur Formel findet sich am unteren Ende dieses Dokuments.
 def kalorien(gewicht, groesse, alter, aktivitaet, geschlecht):
     grundumsatz_mann = 66.47 + (13.7 * gewicht) + (5 * groesse) - (6.8 * alter)
     grundumsatz_frau = 65.51 + (9.6 * gewicht) + (1.8 * groesse) - (4.7 * alter)
+    # Je nach übermitteltem Geschlecht wird die entsprechende Funktion verwendet
     if geschlecht == "m":
         erhaltungskalorien = grundumsatz_mann * aktivitaet
     else:
@@ -19,7 +14,7 @@ def kalorien(gewicht, groesse, alter, aktivitaet, geschlecht):
     return erhaltungskalorien
 
 # Diese Funktion wird weiter unten verwendet um die Gerichte in die Kategorien breakfast,
-# lunch, dinner, snack einzuteilen.
+# lunch, dinner, snack einzuteilen. Das Ergebnis wird in die vorab leere Liste dish_cat geschrieben.
 def get_category(dishes, category):
     dish_cat = []
     for dish in dishes.keys():
@@ -32,7 +27,7 @@ def get_category(dishes, category):
 
 
 # Mit dieser Funktion werden alle dishes mit zu vielen Kalorien enfernt
-# und in die Liste dish_removed geschrieben
+# und in die Liste dish_removed geschrieben. Kalorien als integer verwendet, da damit gerechnet wird.
 def remove_dishes(dishes, max_calories):
     dish_removed = []
     for dish in dishes:

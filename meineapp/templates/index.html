@@ -1,12 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='haupt.css') }}">
-</head>
-<body>
-    <h1>Hello {{ name }}!</h1>
-    <a href="{{ url_for('test')}}">Test</a>
-</body>
-</html>
+{% include "header.html" %}
+{% include "menu.html" %}
+<!-- In diesem Dokument wurde eine Startseite erstellt, die lediglich auf die anderen Pages verlinkt,
+in welchen dann die Funktionalität der Webapp folgt. Dafür wurden Bootstrap-Elemente verwendet.-->
+<div class="container">
+<center>
+<br>
+<h1>Hallo und herzlich Willkommen auf zmettag.li</h1>
+<br>
+<h3>In meiner Webapp kannst Du verschiedene Dinge machen.</h3>
+<br>
+</center>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Nutzer erfassen</h5>
+            <p class="card-text">Hier kann ein neuer Nutzer in die Datenbank der Webapp gespeichert werden.</p>
+            <br><br>
+            <a href="http://127.0.0.1:5000/home/" class="btn btn-danger">Nutzer erfassen</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Mahlzeit speichern</h5>
+            <p class="card-text">Eine Mahlzeit speichern? Kein Problem. Klick auf den Button und speichere deine Lieblingsmahlzeit.</p>
+            <br>
+            <a href="http://127.0.0.1:5000/rezepte/" class="btn btn-danger">Mahlzeit speichern</a>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Kalorienrechner</h5>
+            <p class="card-text">Doch wozu das Ganze? Anhand deiner Angaben kannst du dir hier deinen
+              Kalorienbedarf errechnen lassen. Passend in dazu werden dir Mahlzeiten vorgeschlagen</p>
+            <a href="http://127.0.0.1:5000/kalorien/" class="btn btn-danger">Kalorien berechnen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% include "footer.html" %}

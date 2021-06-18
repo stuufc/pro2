@@ -1,34 +1,31 @@
-Hello World!
-###### **Update Projektidee:**
-Anfang Mai hat sich meine Projektidee nach Absprache mit Herr Odoni noch einmal geändert.
+**Beschreibung Webapp "zmettag.li"**
 
-Neu wird aus einem Menüplaner ein Kalorienzähler/Bedarfsplaner.
+Im Rahmen des Moduls PROG2 hatten wir Studenten den Auftrag, eine Webapp zu erstellen, welche Daten speichern,
+verarbeiten und wiedergeben kann.
 
-Idee ist es, dass die Applikation die Informationen eines "Kunden" entgegennehmen kann und ihm seinen Kalorienbedarf ausrechnet.
-Gleichzeitig sollen Nahrungsmittel mit deren Nährwerten erfasst werden können, einzelne Nahrungsmittel sollen in Mahlzeiten zusammengefasst werden.
-Die erfassten Daten sollen dann beispielsweise einen Essensvorschlag für Frühstück/Mittag/Abendessen machen können, sodass die Nahrungsmittel bzw. die Mahlzeit in den Kalorienbedarf passen.
+Meine Idee beruht auf einem Kalorienrechner. Über ein Webformular können Nutzer ihre Daten erfassen, welche
+in Folge in eine Datenbank (user_data.json) gespeichert werden.
 
-In einer ersten Idee soll die Dateneingabe wie gelernt über eine form in ein Json erfolgen. Über die Datenausgabe muss ich mir zu diesem Zeitpunkt noch Gedanken machen.
+Die Daten werden jeweils einem Key, generiert aus der Kombination aus Vor- und Nachname zugeordnet und in einem
+verschachtelten Dictionary gespeichert.
 
-###### **Erste Projektidee:**
+Über ein weiteres Webformular können Nutzer Gerichte mit der gleichen Logik in eine zweite Datenbank (rezepte.json)
+speichern.
 
-**Auftrag**: 
-Wir studierenden haben den Auftrag erhalten, eine Webapplikation zu erstellen.
-Es ist wichtig, dass Daten eingegeben und ausgelesen werden können. Ausserdem soll zwischen verschiedenen Datentypen unterschieden werden können.
+**Kalorienrechner**
 
-**Kurzbeschreibung Idee/Ausgangslage:**
-In Liechtenstein gibt es etliche Restaurants, die Mittagsmenüs anbieten. Leider fehlt eine zentrale Anlaufstelle für Kunden.
-Die Menükarten und Mittagsmenüs sind im Internet verteilt, wobei viele Kunden dementsprechend nur auf den Websites nach Menüs schauen, die sie bereits kennen.
+Entweder manuell oder nach erfolgreicher Nuterdaten-Eingabe ist der Kalorienrechner zugänglich.
+Hierbei kann in einem Dropdown eine Person (Key aus user_data.json) ausgewähl werden. Anhand der Eingaben
+der jeweiligen Person werden für diese Person dann die Kalorien berechnet und angezeigt.
 
-Meine Idee ist eine WebApp, die als zentraler Menüplaner funktioniert, wobei die WebApp von zweierlei Nutzern bedient werden kann.
+Anhand einer weiteren Funktion werden basierend auf den errechneten Kalorien in die Kalorien-range passende
+Rezepte aus den verschiedenen Kategorien (breakfast, lunch, dinner, snack) ausgewählt und wiedergegeben.
 
-**Nutzer:**
-Restaurants, Imbisse etc. können Daten (siehe Datentypen nach Kategorien) in die Datenbank/WebApp schreiben bzw. einspeisen. Sie können ihre Menüs aktualisieren, neue Speisen einfügen oder Preise ändern.
-Andererseits können mögliche Kunden auf die WebApp zugreifen und die Menüs anschauen, sortieren, filtern etc. und allenfalls Präferenzen merken/speichern.
+=> In der Funktion wurde definiert, dass die jeweilige Mahlzeit einer Kategorie den definierten, prozentualen
+Anteil an den Gesamtkalorien nicht überschreiten darf.
+=> Die Funktionalität, dass die Kalorien mit den Mahlzeiten-Vorschlägen möglichst gut ausgenutzt werden, fehlt.
+Es wurde lediglicht definiert, dass eine gewisse obergrenze nicht überschritten werden darf. 
 
-**Datentypen nach Kategorien:**
-Preis, , Küche (italienisch, mexikanisch, etc.), Gericht/Aktuelles Menü, Restaurant/Anbieter, Ort, Lieferservice/Take Away (Mindestbestellmenge, Lieferzeit, Vorbestellung mögl.?), Oeffnungszeit, Kontaktdaten, Zahlungsoptionen, Tischreservation (Anzahl Personen, drinnen/draussen)
+**Workflow in Form eines Diagramms**
 
-**Workflow:**
-Grundsätzlich sollen wie beschrieben Daten von Anbietern eingegeben und nach Kategorien filterbar, sortierbar und auslesbar (suchbar) sein.
-Wie im ersten Unterrichtsblock bereits angekündigt wird eine json-Datei als "Datenbank" dienen, wobei wir zur genauen Handhabung im Verlauf des Semesters noch Inputs kriegen werden.
+![](meineapp/static/images/workflow_zmettag.png)
